@@ -11,6 +11,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Georgia.ttf">
+            <string>Georgia</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -23,6 +28,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aFb-gf-ysC">
                                 <rect key="frame" x="-1" y="-6" width="375" height="284.33333333333331"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLH-7H-nAO">
+                                <rect key="frame" x="0.0" y="277" width="375" height="5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="SlJ-nj-ugb"/>
+                                </constraints>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9D4-0T-fzv">
                                 <rect key="frame" x="112" y="228" width="150" height="150"/>
                                 <constraints>
@@ -30,16 +42,16 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lTL-48-GgO">
-                                <rect key="frame" x="37.333333333333343" y="433" width="300" height="89"/>
+                                <rect key="frame" x="37.333333333333343" y="433" width="300" height="53"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72a-SZ-y9D">
-                                        <rect key="frame" x="72.666666666666671" y="0.0" width="154.66666666666663" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72a-SZ-y9D">
+                                        <rect key="frame" x="111.33333333333331" y="0.0" width="77.333333333333314" height="24"/>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something about me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkf-ae-BfE">
-                                        <rect key="frame" x="59.666666666666671" y="47" width="180.66666666666663" height="42"/>
+                                        <rect key="frame" x="59.666666666666671" y="29" width="180.66666666666663" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -47,8 +59,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bY4-0w-uSY">
-                                <rect key="frame" x="130.66666666666666" y="601" width="112.66666666666666" height="30"/>
+                                <rect key="frame" x="130.66666666666666" y="565" width="112.66666666666666" height="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="leM-39-Bh9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,18 +72,29 @@
                             <constraint firstItem="aFb-gf-ysC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="6xx-4f-Qz3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9D4-0T-fzv" secondAttribute="trailing" constant="113" id="N1m-sR-Uk7"/>
                             <constraint firstItem="aFb-gf-ysC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.35" id="YPZ-td-osc"/>
+                            <constraint firstItem="CLH-7H-nAO" firstAttribute="top" secondItem="aFb-gf-ysC" secondAttribute="bottom" constant="-1.3333333333333144" id="Zyc-AJ-a8U"/>
                             <constraint firstItem="lTL-48-GgO" firstAttribute="top" secondItem="9D4-0T-fzv" secondAttribute="bottom" constant="55" id="bcd-8h-EIv"/>
                             <constraint firstItem="lTL-48-GgO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="cLf-rD-gzd"/>
+                            <constraint firstItem="CLH-7H-nAO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="gE6-4H-B50"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="aFb-gf-ysC" secondAttribute="top" constant="50" id="j70-Cc-0NA"/>
                             <constraint firstItem="bY4-0w-uSY" firstAttribute="top" secondItem="lTL-48-GgO" secondAttribute="bottom" constant="79" id="ky4-7q-jsd"/>
                             <constraint firstItem="9D4-0T-fzv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mzf-ty-fLK"/>
                             <constraint firstItem="lTL-48-GgO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sec-cf-OUY"/>
                             <constraint firstItem="aFb-gf-ysC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-1" id="shw-R7-1mn"/>
+                            <constraint firstItem="CLH-7H-nAO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tLn-3i-gQU"/>
                             <constraint firstItem="bY4-0w-uSY" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="x9f-Db-gQN"/>
                             <constraint firstItem="bY4-0w-uSY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y58-Vl-Pzc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="aboutMeLabel" destination="Wkf-ae-BfE" id="a9M-WC-jpN"/>
+                        <outlet property="headerImageView" destination="aFb-gf-ysC" id="NYa-XD-j7f"/>
+                        <outlet property="lineView" destination="CLH-7H-nAO" id="1lM-gM-Fuu"/>
+                        <outlet property="loginButton" destination="bY4-0w-uSY" id="LFG-tY-QUA"/>
+                        <outlet property="profileImageView" destination="9D4-0T-fzv" id="QoD-pe-kHX"/>
+                        <outlet property="usernameLabel" destination="72a-SZ-y9D" id="fS2-eT-bIi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
